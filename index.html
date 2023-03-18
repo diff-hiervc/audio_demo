@@ -27,12 +27,10 @@ Diff-HierVC
                 <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <!-- <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#intro">Intro</a> -->
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#realworld_data">Zero-shot Speaker Adaptation</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#realworld_data">One-shot Speaker Adaptation</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#zeroshot">Zero-shot VC</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#m2m">Many-to-Many VC</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#zero_crosslingual">Zero-shot Cross-lingual VC</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#zero_expressive">Zero-shot Expressive VC</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#ablation">Ablation Study</a></li>
                     </ul>
                 </div>
@@ -84,22 +82,22 @@ Diff-HierVC
         <section class="page-section bg-info text-white mb-0" id="realworld_data">	
             <div class="container">
               <div class="text-center">
-                <h2 class="page-section-heading d-inline-block text-white">Zero-shot Speaker Adaptation </h2>
+                <h2 class="page-section-heading d-inline-block text-white">One-shot Speaker Adaptation</h2>
                 <p class="pre-wrap lead"> Real-world Dataset</p>
               </div>
   
               <div class="divider-custom divider-light">
               </div>
-          
-              <div class="row">
+                <div class="row">
                   <div class="col-lg-12 ml-auto">
                     <table class="table table-responsive align-content-center" style="background-color: rgba(255, 255, 255, 0.993); border-radius: 20px">
                       <thead><tr>
-                          <th style="width: 22%"> Source Speaker </th>
-                          <th style="width: 22%"> Target Speaker</th>
-                          <th style="width: 23%"> Converted </th>
-                          <th style="width: 1%">  </th>
+                        <th style="width: 22%"> Source Speaker </th>
+                        <th style="width: 22%"> Target Speaker</th>
+                        <th style="width: 23%"> Converted </th>
+                        <th style="width: 1%">  </th>
                       </tr></thead>    
+                      
                       <tbody>
                         <tr>
                           <td rowspan="1" style="vertical-align: top;"><p> <a href="https://www.youtube.com/watch?v=SLEvWp8JS1c", style="color: blue">Emma Watson <br> (03:30 ~ 03:40)</a> </p>
@@ -108,16 +106,27 @@ Diff-HierVC
                           <td rowspan="1" style="vertical-align: top;"><p> <a href="https://www.youtube.com/watch?v=NB2CNr692RE", style="color: blue">Gollum <br>(00:30 ~ 00:40)</a> </p>
                             <audio id="player" controls><source src="audio/Real/gt/gollum-and-smeagol.wav" type="audio/wav"></audio>
                           </td>
-     
+                           
                           <td>
-                          <p><strong>Diff-HierVC <br>(Zero-shot, 6 iter.) </strong></p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                          <p><strong>Diff-HierVC <br>(One-shot, 6 iter.) </strong></p>
+                            <audio id="player" controls><source src="/audio/Real/oneshot/emma-watson-find_to_gollum-and-smeagol.wav" type="audio/wav"></audio>
+                          </td>
+                        </tr>
+                        <tr><td></td>
+                          <td rowspan="1" style="vertical-align: top;"><p> <a href="https://www.youtube.com/watch?v=_BUWltK_KLY", style="color: blue">Tom holland <br>(00:45 ~ 00:55)</a> </p>
+                            <audio id="player" controls><source src="audio/Real/gt/tom-holland-exclusive-english-speech.wav " type="audio/wav"></audio>
+                          </td>
+                         
+                          <td>
+                            <p><strong>Diff-HierVC <br>(One-shot, 6 iter.) </strong></p>
+                            <audio id="player" controls><source src="/audio/Real/oneshot/emma-watson-find_to_tom-holland-exclusive-english-speech.wav" type="audio/wav"></audio>
                           </td>
                         </tr>
                      </tbody>
                     </table>
                   </div>
-                </div> 
+                </div>
+                
 
               <div class="row">
                   <div class="col-lg-12 ml-auto">
@@ -128,6 +137,7 @@ Diff-HierVC
                         <th style="width: 23%"> Converted </th>
                         <th style="width: 1%">  </th>
                       </tr></thead>    
+
                       <tbody>
                         <tr>
                           <td rowspan="1" style="vertical-align: top;"><p> <a href="https://www.youtube.com/watch?v=j0PDGp1hL4w", style="color: blue">Glados <br>(00:00 ~ 00:10)</a></p>
@@ -138,8 +148,8 @@ Diff-HierVC
                           </td>
                            
                           <td>
-                          <p><strong>Diff-HierVC <br>(Zero-shot, 6 iter.) </strong></p>
-                            <audio id="player" controls><source src="audio/oneshot/zero/glados-speech-part-1_to_english-speech-benedict-cumberbatch.wav" type="audio/wav"></audio>
+                            <p><strong>Diff-HierVC <br>(One-shot, 6 iter.) </strong></p>
+                              <audio id="player" controls><source src="audio/Real/oneshot/glados-speech-part-1_to_english-speech-benedict-cumberbatch.wav" type="audio/wav"></audio>
                           </td>
                         </tr>
                         <tr><td></td>
@@ -148,14 +158,16 @@ Diff-HierVC
                           </td>
                          
                           <td>
-                          <p><strong>Diff-HierVC <br>(Zero-shot, 6 iter.) </strong></p>
-                            <audio id="player" controls><source src="audio/oneshot/zero/glados-speech-part-1_to_tom-holland-exclusive-english-speech.wav" type="audio/wav"></audio>
+                            <p><strong>Diff-HierVC <br>(One-shot, 6 iter.) </strong></p>
+                              <audio id="player" controls><source src="audio/Real/oneshot/glados-speech-part-1_to_tom-holland-exclusive-english-speech.wav" type="audio/wav"></audio>
                           </td>
                         </tr>
                      </tbody>
                     </table>
                   </div>
-                </div> 
+                </div>
+                
+                
               <div class="row">
                   <div class="col-lg-12 ml-auto">
                     <table class="table table-responsive align-content-center" style="background-color: rgba(255, 255, 255, 0.993); border-radius: 20px">
@@ -167,7 +179,7 @@ Diff-HierVC
                       </tr></thead>    
                       <tbody>
                         <tr>
-                          <td rowspan="1" style="color: blue; vertical-align: top;"><p> 226_007 <br> (VCTK) </a></p>
+                          <td rowspan="1" style="color: blue; vertical-align: top;"><p> p225_007 <br> (VCTK) </a></p>
                             <audio id="player" controls ><source src="audio/Real/gt/p226_007.wav " type="audio/wav"></audio>
                           </td>
                           <td rowspan="1" style="vertical-align: top;"><p> <a href="https://www.youtube.com/watch?v=7XO7kVaEgpM", style="color: blue">Benedict  Cumberbatch <br>(05:00 ~ 05:10)</a> </p>
@@ -176,8 +188,8 @@ Diff-HierVC
                           
                            
                           <td>
-                          <p><strong>Diff-HierVC <br>(Zero-shot, 6 iter.) </strong></p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                            <p><strong>Diff-HierVC <br>(One-shot, 6 iter.) </strong></p>
+                              <audio id="player" controls><source src="audio/Real/oneshot/p225_007_to_english-speech-benedict-cumberbatch.wav" type="audio/wav"></audio>
                           </td>
                           </tr>
                           <tr>
@@ -187,8 +199,8 @@ Diff-HierVC
                           </td>
                            
                           <td>
-                          <p><strong>Diff-HierVC <br>(Zero-shot, 6 iter.) </strong></p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                            <p><strong>Diff-HierVC <br>(One-shot, 6 iter.) </strong></p>
+                              <audio id="player" controls><source src="audio/Real/oneshot/p225_007_to_emma-watson-find.wav" type="audio/wav"></audio>
                           </td>
                           </tr>
                           <tr>
@@ -198,8 +210,8 @@ Diff-HierVC
                             </td>
                          
                           <td>
-                          <p><strong>Diff-HierVC <br>(Zero-shot, 6 iter.) </strong></p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                            <p><strong>Diff-HierVC <br>(One-shot, 6 iter.) </strong></p>
+                              <audio id="player" controls><source src="audio/Real/oneshot/p225_007_to_tom-holland-exclusive-english-speech.wav" type="audio/wav"></audio>
                           </td>
                         </tr>
                         <tr>
@@ -209,8 +221,8 @@ Diff-HierVC
                         </td>
                          
                         <td>
-                        <p><strong>Diff-HierVC <br>(Zero-shot, 6 iter.) </strong></p>
-                          <audio id="player" controls><source src="" type="audio/wav"></audio>
+                          <p><strong>Diff-HierVC <br>(One-shot, 6 iter.) </strong></p>
+                            <audio id="player" controls><source src="audio/Real/oneshot/p225_007_to_gollum-and-smeagol.wav" type="audio/wav"></audio>
                         </td>
                         </tr>
                         <tr>
@@ -220,8 +232,8 @@ Diff-HierVC
                           </td>
                        
                         <td>
-                          <p><strong>Diff-HierVC <br>(Zero-shot, 6 iter.) </strong></p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                          <p><strong>Diff-HierVC <br>(One-shot, 6 iter.) </strong></p>
+                            <audio id="player" controls><source src="audio/Real/oneshot/p225_007_to_glados-speech-part-1.wav" type="audio/wav"></audio>
                         </td>
                         </tr>
                         <tr>
@@ -231,8 +243,8 @@ Diff-HierVC
                           </td>
                         
                         <td>
-                        <p><strong>Diff-HierVC <br>(Zero-shot, 6 iter.) </strong></p>
-                          <audio id="player" controls><source src="" type="audio/wav"></audio>
+                          <p><strong>Diff-HierVC <br>(One-shot, 6 iter.) </strong></p>
+                            <audio id="player" controls><source src="audio/Real/oneshot/p225_007_to_goalscorer-son.wav" type="audio/wav"></audio>
                         </td>
                         </tr>
                         <tr>
@@ -242,8 +254,8 @@ Diff-HierVC
                         </td>
                        
                         <td>
-                        <p><strong>Diff-HierVC <br>(Zero-shot, 6 iter.) </strong></p>
-                          <audio id="player" controls><source src="" type="audio/wav"></audio>
+                          <p><strong>Diff-HierVC <br>(One-shot, 6 iter.) </strong></p>
+                            <audio id="player" controls><source src="audio/Real/oneshot/p225_007_to_steve-jobs-2005.wav" type="audio/wav"></audio>
                         </td>
                       </tr>
                      </tbody>
@@ -271,13 +283,65 @@ Diff-HierVC
                         <th style="width: 23%"> Converted</th>
                         <th style="width: 1%">         </th>
                       </tr> 
+                      
+                      <tbody>
+                        <tr>
+                          <td rowspan="5" style="vertical-align: top;"><p>  GT (p241) </p>
+                            <audio id="player" controls ><source src="audio/Zero/src_p241_004.wav" type="audio/wav"></audio>
+                          </td>
+                          <td rowspan="5" style="vertical-align: top;"><p>  GT (p239)  </p>
+                            <audio id="player" controls><source src="audio/Zero/target_p239_022.wav" type="audio/wav"></audio>
+                          </td>
+                          <td><p>&nbsp; AutoVC </p>
+                            <audio id="player" controls><source src="audio/Zero/autovc_p241_004_to_p239_022.wav" type="audio/wav"></audio>
+                          </td>
+                          <td><p>&nbsp; VoiceMixer</p>
+                            <audio id="player" controls><source src="audio/Zero/vm_p241_004_to_p239_022.wav" type="audio/wav"></audio>
+                          </td>
+                          <td><p> Speech Resynthesis</p>
+                            <audio id="player" controls><source src="audio/Zero/sr_p241_004_to_p239_022.wav" type="audio/wav"></audio>
+                          </td> 
+                        </tr>
+                        <tr> 
+                          <td><p>&nbsp; DiffVC * <br>(6 iter.) </p>
+                            <audio id="player" controls><source src="audio/Zero/diffo6_p241_004_to_p239_022.wav" type="audio/wav"></audio>
+                          </td>
+                          <td><p>&nbsp; DiffVC * <br>(30 iter.) </p>
+                            <audio id="player" controls><source src="audio/Zero/diffo30_p241_004_to_p239_022.wav" type="audio/wav"></audio>
+                          </td><td></td>
+                        </tr> 
+                        <tr> 
+                          <td><p>&nbsp; DiffVC <br>(6 iter.) </p>
+                            <audio id="player" controls><source src="audio/Zero/diffuo6_p241_004_to_p239_022.wav" type="audio/wav"></audio>
+                          </td>
+                          <td><p>&nbsp; DiffVC <br>(30 iter.) </p>
+                            <audio id="player" controls><source src="audio/Zero/diffuo30_p241_004_to_p239_022.wav" type="audio/wav"></audio>
+                          </td><td></td>
+                        </tr> 
+                        <tr> 
+                          <td><p><strong>Diff-HierVC <br> (6 iter.) </strong></p>
+                            <audio id="player" controls><source src="audio/Zero/dhvc6_p241_004_to_p239_022.wav" type="audio/wav"></audio>
+                          </td>
+                          <td><p><strong>Diff-HierVC <br> (30 iter.) </strong></p>
+                            <audio id="player" controls><source src="audio/Zero/dhvc30_p241_004_to_p239_022.wav" type="audio/wav"></audio>
+                          </td><td></td>
+                        </tr>
+                        <tr> 
+                          <td><p><strong>Diff-HierVC Finetune <br> (6 iter.) </strong></p>
+                            <audio id="player" controls><source src="audio/Zero/dhvcft6_p241_004_to_p239_022.wav" type="audio/wav"></audio>
+                          </td>
+                          <td><p><strong>Diff-HierVC Finetune <br> (30 iter.) </strong></p>
+                            <audio id="player" controls><source src="audio/Zero/dhvcft30_p241_004_to_p239_022.wav" type="audio/wav"></audio>
+                          </td><td></td>
+                        </tr>
+                      </tbody>
 
                       <tbody>
                         <tr>
-                          <td rowspan="5" style="vertical-align: top;"><p>  GT  </p>
+                          <td rowspan="5" style="vertical-align: top;"><p>  GT (p226)  </p>
                             <audio id="player" controls ><source src="audio/Zero/src_p226_007.wav" type="audio/wav"></audio>
                           </td>
-                          <td rowspan="5" style="vertical-align: top;"><p>  GT   </p>
+                          <td rowspan="5" style="vertical-align: top;"><p>  GT (p229)   </p>
                             <audio id="player" controls><source src="audio/Zero/target_p229_005.wav" type="audio/wav"></audio>
                           </td>
                           <td><p>&nbsp; AutoVC </p>
@@ -321,58 +385,6 @@ Diff-HierVC
                           <td><p><strong>Diff-HierVC Fintune <br> (30 iter.) </strong></p>
                             <audio id="player" controls><source src="audio/Zero/dhvcft30_p226_007_to_p229_005.wav" type="audio/wav"></audio>
                           </td> <td></td>
-                        </tr>
-                      </tbody>
-                      
-                      <tbody>
-                        <tr>
-                          <td rowspan="5" style="vertical-align: top;"><p>  GT  </p>
-                            <audio id="player" controls ><source src="audio/Zero/src_p230_014.wav" type="audio/wav"></audio>
-                          </td>
-                          <td rowspan="5" style="vertical-align: top;"><p>  GT   </p>
-                            <audio id="player" controls><source src="audio/Zero/target_p226_007.wav" type="audio/wav"></audio>
-                          </td>
-                          <td><p>&nbsp; AutoVC </p>
-                            <audio id="player" controls><source src="audio/Zero/autovc_p230_014_to_p226_007.wav" type="audio/wav"></audio>
-                          </td>
-                          <td><p>&nbsp; VoiceMixer</p>
-                            <audio id="player" controls><source src="audio/Zero/vm_p230_014_to_p226_007.wav" type="audio/wav"></audio>
-                          </td>
-                          <td><p> Speech Resynthesis</p>
-                            <audio id="player" controls><source src="audio/Zero/sr_p230_014_to_p226_007.wav" type="audio/wav"></audio>
-                          </td> 
-                        </tr>
-                        <tr> 
-                          <td><p>&nbsp; DiffVC * <br>(6 iter.) </p>
-                            <audio id="player" controls><source src="audio/Zero/diffo6_p230_014_to_p226_007.wav" type="audio/wav"></audio>
-                          </td>
-                          <td><p>&nbsp; DiffVC * <br>(30 iter.) </p>
-                            <audio id="player" controls><source src="audio/Zero/diffo30_p230_014_to_p226_007.wav" type="audio/wav"></audio>
-                          </td><td></td>
-                        </tr> 
-                        <tr> 
-                          <td><p>&nbsp; DiffVC <br>(6 iter.) </p>
-                            <audio id="player" controls><source src="audio/Zero/diffuo6_p230_014_to_p226_007.wav" type="audio/wav"></audio>
-                          </td>
-                          <td><p>&nbsp; DiffVC <br>(30 iter.) </p>
-                            <audio id="player" controls><source src="audio/Zero/diffuo30_p230_014_to_p226_007.wav" type="audio/wav"></audio>
-                          </td><td></td>
-                        </tr> 
-                        <tr> 
-                          <td><p><strong>Diff-HierVC <br> (6 iter.) </strong></p>
-                            <audio id="player" controls><source src="audio/Zero/dhvc6_p230_014_to_p226_007.wav" type="audio/wav"></audio>
-                          </td>
-                          <td><p><strong>Diff-HierVC <br> (30 iter.) </strong></p>
-                            <audio id="player" controls><source src="audio/Zero/dhvc30_p230_014_to_p226_007.wav" type="audio/wav"></audio>
-                          </td><td></td>
-                        </tr>
-                        <tr> 
-                          <td><p><strong>Diff-HierVC Finetune <br> (6 iter.) </strong></p>
-                            <audio id="player" controls><source src="audio/Zero/dhvcft6_p230_014_to_p226_007.wav" type="audio/wav"></audio>
-                          </td>
-                          <td><p><strong>Diff-HierVC Finetune <br> (30 iter.) </strong></p>
-                            <audio id="player" controls><source src="audio/Zero/dhvcft30_p230_014_to_p226_007.wav" type="audio/wav"></audio>
-                          </td><td></td>
                         </tr>
                       </tbody>
 
@@ -428,57 +440,6 @@ Diff-HierVC
                         </tr>
                       </tbody>
 
-                      <tbody>
-                        <tr>
-                          <td rowspan="5" style="vertical-align: top;"><p>  GT (p241) </p>
-                            <audio id="player" controls ><source src="audio/Zero/src_p241_004.wav" type="audio/wav"></audio>
-                          </td>
-                          <td rowspan="5" style="vertical-align: top;"><p>  GT (p239)  </p>
-                            <audio id="player" controls><source src="audio/Zero/target_p239_022.wav" type="audio/wav"></audio>
-                          </td>
-                          <td><p>&nbsp; AutoVC </p>
-                            <audio id="player" controls><source src="audio/Zero/autovc_p241_004_to_p239_022.wav" type="audio/wav"></audio>
-                          </td>
-                          <td><p>&nbsp; VoiceMixer</p>
-                            <audio id="player" controls><source src="audio/Zero/vm_p241_004_to_p239_022.wav" type="audio/wav"></audio>
-                          </td>
-                          <td><p> Speech Resynthesis</p>
-                            <audio id="player" controls><source src="audio/Zero/sr_p241_004_to_p239_022.wav" type="audio/wav"></audio>
-                          </td> 
-                        </tr>
-                        <tr> 
-                          <td><p>&nbsp; DiffVC * <br>(6 iter.) </p>
-                            <audio id="player" controls><source src="audio/Zero/diffo6_p241_004_to_p239_022.wav" type="audio/wav"></audio>
-                          </td>
-                          <td><p>&nbsp; DiffVC * <br>(30 iter.) </p>
-                            <audio id="player" controls><source src="audio/Zero/diffo30_p241_004_to_p239_022.wav" type="audio/wav"></audio>
-                          </td><td></td>
-                        </tr> 
-                        <tr> 
-                          <td><p>&nbsp; DiffVC <br>(6 iter.) </p>
-                            <audio id="player" controls><source src="audio/Zero/diffuo6_p241_004_to_p239_022.wav" type="audio/wav"></audio>
-                          </td>
-                          <td><p>&nbsp; DiffVC <br>(30 iter.) </p>
-                            <audio id="player" controls><source src="audio/Zero/diffuo30_p241_004_to_p239_022.wav" type="audio/wav"></audio>
-                          </td><td></td>
-                        </tr> 
-                        <tr> 
-                          <td><p><strong>Diff-HierVC <br> (6 iter.) </strong></p>
-                            <audio id="player" controls><source src="audio/Zero/dhvc6_p241_004_to_p239_022.wav" type="audio/wav"></audio>
-                          </td>
-                          <td><p><strong>Diff-HierVC <br> (30 iter.) </strong></p>
-                            <audio id="player" controls><source src="audio/Zero/dhvc30_p241_004_to_p239_022.wav" type="audio/wav"></audio>
-                          </td><td></td>
-                        </tr>
-                        <tr> 
-                          <td><p><strong>Diff-HierVC Finetune <br> (6 iter.) </strong></p>
-                            <audio id="player" controls><source src="audio/Zero/dhvcft6_p241_004_to_p239_022.wav" type="audio/wav"></audio>
-                          </td>
-                          <td><p><strong>Diff-HierVC Finetune <br> (30 iter.) </strong></p>
-                            <audio id="player" controls><source src="audio/Zero/dhvcft30_p241_004_to_p239_022.wav" type="audio/wav"></audio>
-                          </td><td></td>
-                        </tr>
-                      </tbody>
                     </table>
                   </div>
                 </div> 
@@ -507,88 +468,88 @@ Diff-HierVC
 
                       <tbody>
                         <tr>
-                          <td rowspan="4" style="vertical-align: top;"><p>  GT  </p>
-                            <audio id="player" controls ><source src="" type="audio/wav"></audio>
+                          <td rowspan="4" style="vertical-align: top;"><p>  GT (1571) </p>
+                            <audio id="player" controls ><source src="audio/M2M/GT_src_1.wav" type="audio/wav"></audio>
                           </td>
-                          <td rowspan="4" style="vertical-align: top;"><p>  GT   </p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                          <td rowspan="4" style="vertical-align: top;"><p>  GT (3526) </p>
+                            <audio id="player" controls><source src="audio/M2M/GT_target_1.wav" type="audio/wav"></audio>
                           </td>
                           <td><p>&nbsp; AutoVC </p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                            <audio id="player" controls><source src="audio/M2M/autovc_seen_1.wav" type="audio/wav"></audio>
                           </td>
                           <td><p>&nbsp; VoiceMixer</p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                            <audio id="player" controls><source src="audio/M2M/voicemixer_1.wav" type="audio/wav"></audio>
                           </td>
                           <td><p> Speech Resynthesis</p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                            <audio id="player" controls><source src="audio/M2M/sr_seen_1.wav" type="audio/wav"></audio>
                           </td> 
                         </tr>
                         <tr> 
                           <td><p>&nbsp; DiffVC * <br>(6 iter.) </p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                            <audio id="player" controls><source src="audio/M2M/diffvc_o_6_1.wav" type="audio/wav"></audio>
                           </td>
                           <td><p>&nbsp; DiffVC * <br>(30 iter.) </p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                            <audio id="player" controls><source src="audio/M2M/diffvc_o_30_1.wav" type="audio/wav"></audio>
                           </td><td></td>
                         </tr>
                         <tr> 
                           <td><p>&nbsp; DiffVC <br>(6 iter.) </p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                            <audio id="player" controls><source src="audio/M2M/diffvc_seen_6_1.wav" type="audio/wav"></audio>
                           </td>
                           <td><p>&nbsp; DiffVC <br>(30 iter.) </p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                            <audio id="player" controls><source src="audio/M2M/diffvc_seen_30_1.wav" type="audio/wav"></audio>
                           </td><td></td>
                         </tr>
                         <tr> 
                           <td><p><strong>Diff-HierVC <br> (6 iter.) </strong></p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                            <audio id="player" controls><source src="audio/M2M/dhvc_6_1.wav" type="audio/wav"></audio>
                           </td>
                           <td><p><strong>Diff-HierVC <br> (30 iter.) </strong></p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                            <audio id="player" controls><source src="audio/M2M/dhvc_30_1.wav" type="audio/wav"></audio>
                           </td> <td></td>
                         </tr>
                       </tbody>
 
                       <tbody>
                         <tr>
-                          <td rowspan="4" style="vertical-align: top;"><p>  GT  </p>
-                            <audio id="player" controls ><source src="" type="audio/wav"></audio>
+                          <td rowspan="4" style="vertical-align: top;"><p>  GT (3699)  </p>
+                            <audio id="player" controls ><source src="audio/M2M/GT_src_3.wav" type="audio/wav"></audio>
                           </td>
-                          <td rowspan="4" style="vertical-align: top;"><p>  GT   </p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                          <td rowspan="4" style="vertical-align: top;"><p>  GT (374)  </p>
+                            <audio id="player" controls><source src="audio/M2M/GT_target_3.wav" type="audio/wav"></audio>
                           </td>
                           <td><p>&nbsp; AutoVC </p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                            <audio id="player" controls><source src="audio/M2M/autovc_seen_3.wav" type="audio/wav"></audio>
                           </td>
                           <td><p>&nbsp; VoiceMixer</p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                            <audio id="player" controls><source src="audio/M2M/voicemixer_3.wav" type="audio/wav"></audio>
                           </td>
                           <td><p> Speech Resynthesis</p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                            <audio id="player" controls><source src="audio/M2M/sr_seen_3.wav" type="audio/wav"></audio>
                           </td> 
                         </tr>
                         <tr> 
                           <td><p>&nbsp; DiffVC * <br>(6 iter.) </p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                            <audio id="player" controls><source src="audio/M2M/diffvc_o_6_3.wav" type="audio/wav"></audio>
                           </td>
                           <td><p>&nbsp; DiffVC * <br>(30 iter.) </p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                            <audio id="player" controls><source src="audio/M2M/diffvc_o_30_3.wav" type="audio/wav"></audio>
                           </td><td></td>
                         </tr>
                         <tr> 
                           <td><p>&nbsp; DiffVC <br>(6 iter.) </p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                            <audio id="player" controls><source src="audio/M2M/diffvc_seen_6_3.wav" type="audio/wav"></audio>
                           </td>
                           <td><p>&nbsp; DiffVC <br>(30 iter.) </p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                            <audio id="player" controls><source src="audio/M2M/diffvc_seen_30_3.wav" type="audio/wav"></audio>
                           </td><td></td>
                         </tr>
                         <tr> 
                           <td><p><strong>Diff-HierVC <br> (6 iter.) </strong></p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                            <audio id="player" controls><source src="audio/M2M/dhvc_6_3.wav" type="audio/wav"></audio>
                           </td>
                           <td><p><strong>Diff-HierVC <br> (30 iter.) </strong></p>
-                            <audio id="player" controls><source src="" type="audio/wav"></audio>
+                            <audio id="player" controls><source src="audio/M2M/dhvc_30_3.wav" type="audio/wav"></audio>
                           </td> <td></td>
                         </tr>
                       </tbody>
